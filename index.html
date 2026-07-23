@@ -7,13 +7,14 @@
 <title>Malika Invitation</title>
 
 <style>
+
 body {
     margin:0;
-    height:100vh;
-    background: radial-gradient(circle,#222,#000);
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    background:#050505;
     font-family:Arial, sans-serif;
     color:white;
     overflow:hidden;
@@ -23,32 +24,15 @@ body {
     width:330px;
     padding:35px;
     text-align:center;
-    background:rgba(255,255,255,0.08);
+    background:linear-gradient(145deg,#171717,#090909);
     border:1px solid #d4af37;
     border-radius:25px;
-    backdrop-filter:blur(15px);
-    box-shadow:0 0 40px rgba(212,175,55,0.5);
-    animation:show 2s;
-}
-
-@keyframes show {
-    from {
-        opacity:0;
-        transform:scale(0.7);
-    }
-    to {
-        opacity:1;
-        transform:scale(1);
-    }
+    box-shadow:0 0 40px rgba(212,175,55,0.4);
 }
 
 h1 {
     color:#d4af37;
     font-size:30px;
-}
-
-h2 {
-    color:#fff;
 }
 
 .gold {
@@ -57,40 +41,54 @@ h2 {
     font-weight:bold;
 }
 
+.info {
+    line-height:1.7;
+    font-size:17px;
+}
+
 button {
-    margin-top:15px;
-    padding:13px 30px;
+    margin-top:20px;
+    padding:14px 35px;
     border:none;
     border-radius:30px;
     background:#d4af37;
-    color:black;
+    color:#000;
     font-size:16px;
+    cursor:pointer;
 }
+
 
 .heart {
     position:absolute;
     font-size:25px;
-    animation:fly 7s infinite;
+    animation:heart 8s infinite;
 }
 
-@keyframes fly {
-    0% {
-        bottom:-50px;
-        opacity:0;
-    }
-    50% {
-        opacity:1;
-    }
-    100% {
-        bottom:100vh;
-        opacity:0;
-    }
+@keyframes heart {
+
+0% {
+bottom:-50px;
+opacity:0;
+}
+
+50% {
+opacity:1;
+}
+
+100% {
+bottom:100vh;
+opacity:0;
+}
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="heart" style="left:10%;">❤️</div>
 <div class="heart" style="left:30%;animation-delay:2s;">❤️</div>
@@ -98,60 +96,88 @@ button {
 <div class="heart" style="left:90%;animation-delay:1s;">❤️</div>
 
 
+
 <div class="card">
 
-<h1>✨ Малика приглашает вас ✨</h1>
+<h1>
+✨ Малика приглашает вас ✨
+</h1>
 
-<h2>на празднование</h2>
+
+<p>
+На празднование
+</p>
+
 
 <p class="gold">
 18-летия ❤️
 </p>
 
-<p>
+
+<div class="info">
+
 📅 <b>28 июля</b><br>
-⏰ <b>18:00</b>
-</p>
 
-<p>
-📍 PASHTET (Паштет)
-</p>
+⏰ <b>18:00</b><br>
 
-<p>
-👗 Дресс-код:<br>
+📍 <b>PASHTET (Паштет)</b><br>
+
+👗 <b>Дресс-код:</b><br>
 Вечерний стиль
-</p>
 
-<p>
+<br><br>
+
 Гости, состоящие в отношениях,
 приглашаются парами.
+
 <br><br>
+
 Подарки — денежные средства
 от 1500 сомов или подарок
-по вашему выбору.
-</p>
+на ваше усмотрение.
+
+</div>
 
 
-<a href="https://2gis.kg/bishkek/geo/70000001089356957">
-<button>
-🗺 Открыть место
+<button onclick="showForm()">
+❤️ Я приду
 </button>
-</a>
 
+
+<div id="form" style="display:none;">
+
+<h3>Подтвердите присутствие</h3>
+
+<input id="name" placeholder="Ваше имя"
+style="padding:10px;border-radius:10px;border:0;">
 
 <br>
 
-<button onclick="document.getElementById('music').play()">
-🎵 Включить музыку
+<button onclick="send()">
+Отправить
 </button>
+
+</div>
 
 
 </div>
 
 
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
+
+<script>
+
+function showForm(){
+document.getElementById("form").style.display="block";
+}
+
+
+function send(){
+let name=document.getElementById("name").value;
+
+alert("Спасибо, "+name+" ❤️");
+}
+
+</script>
 
 
 </body>
