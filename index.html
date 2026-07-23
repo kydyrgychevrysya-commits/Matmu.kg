@@ -139,45 +139,17 @@ opacity:0;
 </div>
 
 
-<button onclick="showForm()">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScdduz9nf9zY5ZkDxUMzUPzbcUuxT8cKBGeRqlNPfaPcnADBA/viewform?usp=dialog" target="_blank">
+<button>
 ❤️ Я приду
 </button>
-
-
-<div id="form" style="display:none;">
-
-<h3>Подтвердите присутствие</h3>
-
-<input id="name" placeholder="Ваше имя"
-style="padding:10px;border-radius:10px;border:0;">
-
-<br>
-
-<button onclick="send()">
-Отправить
-</button>
-
-</div>
+</a>
 
 
 </div>
 
 
 
-<script>
-
-function showForm(){
-document.getElementById("form").style.display="block";
-}
-
-
-function send(){
-let name=document.getElementById("name").value;
-
-alert("Спасибо, "+name+" ❤️");
-}
-
-</script>
 
 
 </body>
